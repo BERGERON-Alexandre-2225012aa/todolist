@@ -14,6 +14,7 @@ class TodoApp extends React.Component {
     this.addTask = this.addTask.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
+    
   }
   
   render() {
@@ -29,13 +30,14 @@ class TodoApp extends React.Component {
           onChange={this.handleSearchChange} 
         />
         <ol>
-        {this.state.items.map((item, index) => (
+        {filteredItems.map((item, index) => (
     			<li key={index}>
         
             <button class="delete" onClick={() => this.deleteATask(index)}>-</button>
             <input type="checkbox" readOnly checked={item.done} onChange={() => this.checkATask(index)} /> 
             <span className={item.done ? "done" : ""}>{item.text}</span>
-        
+            <button class="order" onClick={() => this.moveItemUp(index)}>Up</button>
+            <button class="order" onClick={() => this.moveItemDown(index)}>Down</button>
           </li>
 				))}
         </ol>
@@ -62,8 +64,6 @@ class TodoApp extends React.Component {
     	this.setState({ items: updatedItems });
     }
   }
-
-  
   
   addTask() {
   	this.setState(previousState => ({
@@ -73,6 +73,30 @@ class TodoApp extends React.Component {
   
   handleSearchChange(event) {
     this.setState({ searchTerm: event.target.value });
+  }
+  
+  moveItemUp = (index) => {
+    if (index > 0) {
+      this.setState(prevState => {
+        const newItems = [...prevState.items];
+        const temp = newItems[index];
+        newItems[index] = newItems[index - 1];
+        newItems[index - 1] = temp;
+        return { items: newItems };
+      });
+    }
+  }
+
+  moveItemDown = (index) => {
+    if (index < this.state.items.length - 1) {
+      this.setState(prevState => {
+        const newItems = [...prevState.items];
+        const temp = newItems[index];
+        newItems[index] = newItems[index + 1];
+        newItems[index + 1] = temp;
+        return { items: newItems };
+      });
+    }
   }
   
 }
