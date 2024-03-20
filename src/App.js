@@ -26,6 +26,9 @@ class TodoApp extends React.Component {
     );
     return (
         <div>
+          <header><label className="blue">{this.state.items.filter(item => item.done === true).length} task done
+            on {this.state.items.length}.</label> <br></br></header>
+
           <h2>Todos:</h2>
           <input
               placeholder="Rechercher une tâche"
@@ -37,21 +40,22 @@ class TodoApp extends React.Component {
                 <li key={index}>
 
                   <button class="delete" onClick={() => this.deleteATask(index)}>-</button>
-                  <input type="checkbox" readOnly checked={item.done} onChange={() => this.checkATask(index)} />
+                  <input type="checkbox" readOnly checked={item.done} onChange={() => this.checkATask(index)}/>
                   <span className={item.done ? "done" : ""}>{item.text}</span>
                   <button class="order" onClick={() => this.moveItemUp(index)}>Up</button>
                   <button class="order" onClick={() => this.moveItemDown(index)}>Down</button>
                 </li>
             ))}
           </ol>
-          <label class="blue">{this.state.items.filter(item=> item.done === true).length} task done on {this.state.items.length}.</label> <br></br>
-          <input onChange={this.handleInputChange}></input><button onClick={this.addTask}>+</button>
+
+          <input onChange={this.handleInputChange}></input>
+          <button onClick={this.addTask}>+</button>
         </div>
     )
   }
 
   handleInputChange(event) {
-    this.setState({ inputTask: event.target.value });
+    this.setState({inputTask: event.target.value});
   }
 
   checkATask(index) {
