@@ -1,8 +1,10 @@
 body {
-  background: #a5a5a5;
+  background: #212121;
   padding: 20px;
-  font-family: Helvetica;
+  font-family: "Microsoft JhengHei UI";
 }
+
+
 
 #app {
   background: #fff;
@@ -11,13 +13,23 @@ body {
   transition: all 0.2s;
 }
 
-li {
-  margin: 8px 0;
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 h2 {
   font-weight: bold;
-  margin-bottom: 15px;
+  font-size: 8vw;
+  color: white;
+}
+
+.taskNumber {
+  font-size: 6vw;
+  color: #00cc6f;
+  margin-bottom: 15vw;
 }
 
 .done {
@@ -25,18 +37,118 @@ h2 {
   text-decoration: line-through;
 }
 
-input {
-  margin-right: 5px;
+.searchBarDiv {
+  background-color: white;
+  margin-top: 5vw;
+  margin-bottom: 8vw;
+  width: 80%;
+  display: flex;
+  border-radius: 10vw;
+
 }
 
-.blue {
-  color: blue;
+.searchBar {
+  border: none;
+  border-radius: 10vw;
+  text-align: center;
+  height: 8vw;
+  width: 100%;
+  font-size: 5vw;
+
+}
+.searchButton {
+  background-image: url("../public/img/search.png");
+  background-color: white;
+  background-size: 4vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 3.5vw;
+  width: 8vw;
+  height: 8vw;
+  margin-right: 1vw;
 }
 
 .delete {
-  margin-right: 5px;
+  background-image: url("../public/img/delete.png");
+  margin-left: 3vw;
+  background-color: #d31a1a;
+  background-size: 5vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 3.5vw;
+  width: 7vw;
+  height: 7vw;
 }
 
 .order {
   margin-left: 5px;
+}
+
+.up {
+  background-image: url("../public/img/uparrow.png");
+  background-color: #3b3bee;
+  background-size: 3.5vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 3.5vw;
+  width: 7vw;
+  height: 7vw;
+}
+
+.down {
+  background-image: url("../public/img/downarrow.png");
+  background-color: #3b3bee;
+  background-size: 3.5vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 3.5vw;
+  width: 7vw;
+  height: 7vw;
+}
+
+.taskList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+li {
+  background-color: #e8e7e7;
+  margin-bottom: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 2vw;
+  padding: 2vw;
+  width: 90%;
+}
+
+span {
+  width: 100%;
+  font-size: 3vw;
+  font-weight: bold;
+}
+
+.checkBox {
+  transform: scale(2);
+  margin-right: 3vw;
+  margin-left: 2vw;
+}
+
+.orderDiv {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

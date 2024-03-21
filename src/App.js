@@ -1,5 +1,8 @@
 import React from "react";
 import './App.css';
+import Header from './Header';
+import Footer from './Footer';
+
 
 class TodoApp extends React.Component {
   constructor(props) {
@@ -25,31 +28,40 @@ class TodoApp extends React.Component {
         item.text.toLowerCase().includes(this.state.searchTerm.toLowerCase())
     );
     return (
-        <div>
-          <header><label className="blue">{this.state.items.filter(item => item.done === true).length} task done
-            on {this.state.items.length}.</label> <br></br></header>
+        <div className="container">
+          <Header tasksDone={this.state.items.filter(item => item.done === true).length} totalTasks={this.state.items.length} />
 
-          <h2>Todos:</h2>
-          <input
-              placeholder="Rechercher une tâche"
-              value={this.state.searchTerm}
-              onChange={this.handleSearchChange}
-          />
-          <ol>
+
+          <div className="taskList">
+
+
+
             {filteredItems.map((item, index) => (
                 <li key={index}>
 
-                  <button class="delete" onClick={() => this.deleteATask(index)}>-</button>
-                  <input type="checkbox" readOnly checked={item.done} onChange={() => this.checkATask(index)}/>
+
+                  <input className="checkBox" type="checkbox" readOnly checked={item.done}
+                         onChange={() => this.checkATask(index)}/>
                   <span className={item.done ? "done" : ""}>{item.text}</span>
-                  <button class="order" onClick={() => this.moveItemUp(index)}>Up</button>
-                  <button class="order" onClick={() => this.moveItemDown(index)}>Down</button>
+                  <div className="orderDiv">
+
+                    <button className="order up" onClick={() => this.moveItemUp(index)}></button>
+                    <button className="order down" onClick={() => this.moveItemDown(index)}></button>
+                    <button className="delete" onClick={() => this.deleteATask(index)}></button>
+                  </div>
+
                 </li>
             ))}
-          </ol>
+          </div>
 
-          <input onChange={this.handleInputChange}></input>
-          <button onClick={this.addTask}>+</button>
+          <Footer
+              searchTerm={this.state.searchTerm}
+              handleSearchChange={this.handleSearchChange}
+              handleInputChange={this.handleInputChange}
+              addTask={this.addTask}
+          />
+
+
         </div>
     )
   }
