@@ -30,6 +30,17 @@ class TodoApp extends React.Component {
 
   }
 
+  componentDidMount() {
+    const storedItems = localStorage.getItem("todoItems");
+    if (storedItems) {
+      this.setState({ items: JSON.parse(storedItems) });
+    }
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem("todoItems", JSON.stringify(this.state.items));
+  }
+
   render() {
     const filteredItems = this.state.items.filter(item =>
         item.text.toLowerCase().includes(this.state.searchTerm.toLowerCase())
