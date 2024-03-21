@@ -44,6 +44,7 @@ h2 {
   width: 340px;
   display: flex;
   border-radius: 20px;
+  max-width: 90vw;
 
 }
 
@@ -126,6 +127,7 @@ li {
   border-radius: 2vw;
   padding: 2vw;
   width: 400px;
+  max-width: 90vw;
 }
 
 span {
@@ -162,6 +164,7 @@ footer {
   font-size: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
+  max-width: 90vw;
 }
 
 .buttonAddTask {
