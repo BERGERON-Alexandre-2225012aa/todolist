@@ -4,7 +4,11 @@ import Header from './Header';
 import Footer from './Footer';
 
 
+
+
 class TodoApp extends React.Component {
+  openModal = () => this.setState({open: true});
+  closeModal = () => this.setState({open: false});
   constructor(props) {
     super(props)
     this.state = {
@@ -15,11 +19,14 @@ class TodoApp extends React.Component {
         { text: "Build something awesome", done: true }
       ],
       inputTask: "Une tâche",
-      searchTerm: ""
+      searchTerm: "",
+      open: false
     }
     this.addTask = this.addTask.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.openModal = this.openModal.bind(this);
 
   }
 
@@ -54,11 +61,17 @@ class TodoApp extends React.Component {
             ))}
           </div>
 
+
+
+
           <Footer
               searchTerm={this.state.searchTerm}
               handleSearchChange={this.handleSearchChange}
               handleInputChange={this.handleInputChange}
               addTask={this.addTask}
+              open={this.state.open}
+              openModal={this.openModal}
+              closeModal={this.closeModal}
           />
 
 

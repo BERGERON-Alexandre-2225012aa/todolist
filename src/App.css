@@ -22,14 +22,14 @@ header {
 
 h2 {
   font-weight: bold;
-  font-size: 8vw;
+  font-size: 37px;
   color: white;
 }
 
 .taskNumber {
-  font-size: 6vw;
+  font-size: 28px;
   color: #00cc6f;
-  margin-bottom: 15vw;
+  margin-bottom: 70px;
 }
 
 .done {
@@ -40,46 +40,46 @@ h2 {
 .searchBarDiv {
   background-color: white;
   margin-top: 5vw;
-  margin-bottom: 8vw;
-  width: 80%;
+  margin-bottom: 2vw;
+  width: 340px;
   display: flex;
-  border-radius: 10vw;
+  border-radius: 20px;
 
 }
 
 .searchBar {
   border: none;
-  border-radius: 10vw;
+  border-radius: 20px;
   text-align: center;
-  height: 8vw;
-  width: 100%;
-  font-size: 5vw;
+  height: 40px;
+  width: 300px;
+  font-size: 20px;
 
 }
 .searchButton {
   background-image: url("../public/img/search.png");
   background-color: white;
-  background-size: 4vw;
+  background-size: 20px;
   background-repeat: no-repeat;
   background-position: center;
   border: none;
-  border-radius: 3.5vw;
-  width: 8vw;
-  height: 8vw;
-  margin-right: 1vw;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
 }
 
 .delete {
   background-image: url("../public/img/delete.png");
   margin-left: 3vw;
   background-color: #d31a1a;
-  background-size: 5vw;
+  background-size: 24px;
   background-repeat: no-repeat;
   background-position: center;
   border: none;
-  border-radius: 3.5vw;
-  width: 7vw;
-  height: 7vw;
+  border-radius: 16px;
+  width: 32px;
+  height: 32px;
 }
 
 .order {
@@ -89,25 +89,25 @@ h2 {
 .up {
   background-image: url("../public/img/uparrow.png");
   background-color: #3b3bee;
-  background-size: 3.5vw;
+  background-size: 16px;
   background-repeat: no-repeat;
   background-position: center;
   border: none;
-  border-radius: 3.5vw;
-  width: 7vw;
-  height: 7vw;
+  border-radius: 16px;
+  width: 32px;
+  height: 32px;
 }
 
 .down {
   background-image: url("../public/img/downarrow.png");
   background-color: #3b3bee;
-  background-size: 3.5vw;
+  background-size: 16px;
   background-repeat: no-repeat;
   background-position: center;
   border: none;
-  border-radius: 3.5vw;
-  width: 7vw;
-  height: 7vw;
+  border-radius: 16px;
+  width: 32px;
+  height: 32px;
 }
 
 .taskList {
@@ -125,12 +125,12 @@ li {
   justify-content: flex-start;
   border-radius: 2vw;
   padding: 2vw;
-  width: 90%;
+  width: 400px;
 }
 
 span {
   width: 100%;
-  font-size: 3vw;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -151,4 +151,27 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.inputAddTask {
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  height: 25px;
+  width: 200px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.buttonAddTask {
+  background-image: url("../public/img/plus.png");
+  background-color: #2dd31a;
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 16px;
+  width: 32px;
+  height: 32px;
 }
